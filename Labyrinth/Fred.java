@@ -19,18 +19,18 @@ public class Fred extends Actor
         if(Greenfoot.isKeyDown("left")) {setRotation(180); move(10);}
         if(Greenfoot.isKeyDown("right")) {setRotation(0); move(10);}
         sammleDiamanten(); 
-        sammleBombe(); 
+        //sammleBombe(); 
     }
     
     public void sammleDiamanten(){
-        getWorld().removeObjects(getObjectsInRange(20, Diamant.class)); 
+        getWorld().removeObjects(getObjectsInRange(20, Diamond.class)); 
     }
     
-    public void sammleBombe(){
-        if(isTouching(Bombe.class)){
-            getWorld().removeObject(Fred.class); 
-            Fred fred = new Fred();
-            addObject(fred, 20, 380);
-        }
-    }
+    //public void sammleBombe(){
+    //    if(isTouching(Bombe.class)){
+     //       getWorld().removeObject(Fred.class); 
+      //      Fred fred = new Fred();
+      //      addObject(fred, 20, 380);
+      //  }
+    //}
 }
