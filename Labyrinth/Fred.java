@@ -28,7 +28,7 @@ public class Fred extends Actor
     
     public void sammleBombe(){
         if(isTouching(Bombe.class)){
-            removeObject(Fred.class); 
+            getWorld().removeObject(Fred.class); 
             Fred fred = new Fred();
             addObject(fred, 20, 380);
         }
