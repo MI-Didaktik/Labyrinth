@@ -18,7 +18,19 @@ public class Fred extends Actor
         if(Greenfoot.isKeyDown("down")) {setRotation(90); move(10);}
         if(Greenfoot.isKeyDown("left")) {setRotation(180); move(10);}
         if(Greenfoot.isKeyDown("right")) {setRotation(0); move(10);}
-
+        sammleDiamanten(); 
+        sammleBombe(); 
     }
     
+    public void sammleDiamanten(){
+        getWorld().removeObjects(getObjectsInRange(20, Diamant.class)); 
+    }
+    
+    public void sammleBombe(){
+        if(isTouching(Bombe.class)){
+            removeObject(Fred.class); 
+            Fred fred = new Fred();
+            addObject(fred, 20, 380);
+        }
+    }
 }
